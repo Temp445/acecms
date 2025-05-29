@@ -46,12 +46,12 @@ const Why_Choose = () => {
               Why Choose Us?
             </div>
             
-            <h2 className="text-2xl md:3xl  2xl:text-4xl font-bold text-gray-800 leading-tight">
+            <h2 className="text-xl md:3xl  2xl:text-4xl font-bold text-gray-800 leading-tight">
                ACE CMS – Smart <span className='text-sky-800 mr-2'>Calibration Management</span> <br className='hidden xl:block' />Made Simple
               <span className="text-blue-600"></span>
             </h2>
             
-            <p className=" lg:text-lg text-gray-600">
+            <p className="text-sm lg:text-lg text-gray-600">
               At <strong>ACE CMS</strong>, we don&apos;t just help you manage calibration—we help you master it. 
               Here&apos;s why leading companies trust us:
             </p>

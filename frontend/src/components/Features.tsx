@@ -65,7 +65,7 @@ const Features = () => {
     <div className="py-10 md:py-16   md:mt-10" id="features">
       <div className=" px-4 sm:px-6 lg:px-8 container mx-auto relative">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 ">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-gray-900 ">
             What We Offer
           </h2>
           <p className="md:text-lg text-slate-700 max-w-5xl mx-auto text-justify md:text-center">

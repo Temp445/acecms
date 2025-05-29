@@ -74,13 +74,13 @@ const Hero = () => {
             <span className="text-lg font-bold text-white tracking-wide mt-1">ACE CMS</span>
           </div>
 
-          <section className="flex flex-col lg:flex-row items-center max-w-11/12 mx-auto justify-between min-h-[80vh] 2xl:min-h-fit 2xl:pb-10  gap-12 lg:gap-8">
+          <section className="flex flex-col lg:flex-row items-center md:max-w-11/12 mx-auto justify-between  min-h-fit 2xl:pb-10  md:gap-12 lg:gap-8">
             <div className="relative w-full  order-1 lg:order-2">
               <div className="relative max-w-lg mx-auto lg:mx-0">
                 <div className="absolute -inset-8 bg-violet-400/20 rounded-3xl blur-2xl" />
                <div className="grid grid-cols-1 gap-6">
 
-  <div className="relative bg-white/10 rounded-2xl border border-white/20 p-6 shadow-2xl backdrop-blur-sm">
+  <div className="relative bg-white/10 rounded-2xl border border-white/20 p-2 md:p-6 shadow-2xl backdrop-blur-sm">
     <Image
       src={img1}
       alt="image"
@@ -120,10 +120,10 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="w-full text-center lg:text-left order-2 lg:order-1">
-              <div className="max-w-2xl mx-auto lg:mx-0 space-y-8">
+            <div className="w-full text-center lg:text-left order-2 lg:order-1 mt-10 ">
+              <div className="max-w-2xl mx-auto lg:mx-0 space-y-6 md:space-y-8  ">
                 <div className="space-y-4">
-                  <h1 className='md:hidden text-2xl text-white font-bold text-center'>Streamline Calibration Management and Ensure Compliance with ACE CMS</h1>
+                  <h1 className='md:hidden text-xl text-white font-bold md:text-center'>Streamline Calibration Management, Ensure Regulatory Compliance, and Boost Efficiency with ACE CMS.</h1>
                   <h1 className=" hidden md:block text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-black text-white leading-tight">
                     Streamline Calibration Management and Ensure Compliance with <span className='relative text-white'>ACE CMS
                        <div className="absolute -bottom-2 left-0 right-0 h-1 bg-cyan-400 rounded-full" />
@@ -150,7 +150,7 @@ const Hero = () => {
                   </div>
                 </div>
 
-                <div className="pt-4 flex gap-5 mx-auto justify-center lg:justify-start">
+                <div className="pt-4 flex gap-5 mx-auto justify-evenly md:justify-center lg:justify-start">
                  <div>
                    <Link href="#contact" className="group inline-flex items-center gap-3 px-4 py-2  md:px-8 md:py-3 lg:px-6 lg:py-3 bg-gray-800  text-white md:text-lg font-bold rounded  shadow-xl hover:shadow-2xl">
                     <span>Contact Us</span>

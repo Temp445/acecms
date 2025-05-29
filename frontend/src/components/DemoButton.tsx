@@ -25,10 +25,10 @@ export default function DemoButton() {
       <div className="w-full">
         <button
           onClick={handleDemoClick}
-          className="flex items-center justify-center gap-2 px-6 py-3 bg-orange-600 text-white rounded hover:scale-105 transition-transform shadow-lg"
+          className="flex items-center justify-center gap-2 px-6 py-2 md:py-3 bg-orange-600 text-white rounded hover:scale-105 transition-transform shadow-lg"
           aria-label="Watch demo video"
         >
-          <span className="text-lg font-semibold">Watch Demo</span>
+          <span className="md:text-lg font-semibold">Watch Demo</span>
         </button>
 
         {showVideoOverlay && (
