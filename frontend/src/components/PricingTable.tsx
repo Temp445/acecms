@@ -6,11 +6,11 @@ import { LuSquareArrowOutUpRight } from 'react-icons/lu';
 
 interface Feature {
   name: string;
-  Essential?: boolean;
+  Essential: boolean;
   EssentialNote?: string;
-  BasicPlus?: boolean;
+  BasicPlus: boolean;
   BasicPlusNote?: string;
-  premium?: boolean;
+  premium: boolean;
   premiumNote?: string;
 }
 
@@ -33,6 +33,7 @@ interface FeatureIconProps {
 const PricingTable: React.FC = () => {
   const features: Feature[] = [
     { name: 'User Limit', Essential: true, EssentialNote: '5', BasicPlus: true, BasicPlusNote: '15', premium: true, premiumNote: 'Unlimited' },
+    { name: 'Internal & External Calibration Certificate Upload', Essential: false, BasicPlus: true, premium: true },
     { name: 'Calibration History & Reports', Essential: true, EssentialNote: '', BasicPlus: true, BasicPlusNote: '', premium: true, premiumNote: '' },
     { name: 'Email Alerts for Calibration Due Dates', Essential: true, BasicPlus: true, premium: true },
     { name: 'Add & Track Instruments & Locations', Essential: true, BasicPlus: true, premium: true },
@@ -45,8 +46,6 @@ const PricingTable: React.FC = () => {
     { name: 'Custom User Roles & Permissions', Essential: true, BasicPlus: true, premium: true },
     { name: 'API & Advanced Data Export', Essential: true, BasicPlus: true, premium: true },
     { name: 'Custom Number Format on Reports', Essential: true, BasicPlus: true, premium: true },
-    { name: 'External Calibration Certificate Upload', Essential: true, BasicPlus: undefined, premium: undefined },
-    { name: 'Internal & External Calibration Certificate Upload', Essential: undefined, BasicPlus: true, premium: true },
   ];
 
   const plans: Plan[] = [
@@ -102,9 +101,7 @@ const PricingTable: React.FC = () => {
   };
 
   const renderFeatureList = (features: Feature[], key: string, planName: string) =>
-    features
-  .filter(feature => feature[key as keyof Feature] !== undefined)
-  .map((feature, i) => {
+    features.map((feature, i) => {
       const isAvailable = feature[key as keyof Feature] as boolean;
       const note = feature[`${key}Note` as keyof Feature] as string | undefined;
       return (
