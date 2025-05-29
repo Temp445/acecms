@@ -57,7 +57,7 @@ export default function Video() {
             className="fixed inset-0 bg-black/80 flex items-center justify-center z-[300]"
             onClick={handleOverlayClick}
           >
-            <div className="relative w-full max-w-5xl mx-4">
+            <div className="relative w-full max-w-5xl mx-4 aspect-video">
               <button
                 onClick={closeVideoOverlay}
                 className="absolute -top-10 right-0 text-white text-4xl hover:text-red-500 transition"
@@ -65,15 +65,15 @@ export default function Video() {
               >
                 <IoCloseCircleOutline />
               </button>
-              <div className="rounded-lg overflow-hidden shadow-2xl">
-                <video
-                  ref={videoRef}
-                  className="w-full h-auto rounded-lg"
-                  controls
-                >
-                  <source src="/videos/CMS_Demo.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+              <div className="rounded-lg overflow-hidden shadow-2xl h-full">
+               <iframe
+                  className="w-full h-full rounded-lg"
+                  src="https://www.youtube.com/embed/qMGI1r4SUIo?autoplay=1"
+                  title="Demo Video"
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>

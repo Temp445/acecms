@@ -1,6 +1,4 @@
-'use client'
 
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from './Navbar';
@@ -12,10 +10,10 @@ import img3 from '../assets/4750.jpg';
 
 import image from '../assets/Group.svg';
 import image1 from '../assets/Group1.svg';
-import image3 from '../assets/Group3.svg';
+import image3 from '../assets/Scale.png';
 import image5 from '../assets/Group6.png';
-import tool from '../assets/Tools.png';
 import gear from '../assets/Gears.png';
+import DemoButton from './DemoButton';
 
 const Hero = () => {
   return (
@@ -34,7 +32,7 @@ const Hero = () => {
         </div>
         <div className="hidden xl:block absolute right-32 top-96">
           <div className="p-3 bg-white/10 rounded-xl border border-white/20 backdrop-blur-sm ">
-            <Image src={image3} alt="icon" className="w-14 h-12 opacity-75 rotate-45" width={56} height={48} />
+            <Image src={image3} alt="icon" className="w-14 h-14 rotate-12 " width={56} height={48} />
           </div>
         </div>
         <div className="absolute top-32 left-10 md:left-20 lg:left-32">
@@ -71,7 +69,7 @@ const Hero = () => {
             <Navbar />
           </nav>
 
-          <div className="md:hidden flex gap-1 mx-auto justify-center w-fit py-4 px-6 md:mt-6   -mt-16 ">
+          <div className="md:hidden flex gap-1 mx-auto justify-center w-fit py-4 px-6 md:mt-10  -mt-16 ">
             <Image src={logo} alt="logo" className="w-8 h-8 " width={32} height={32}  />
             <span className="text-lg font-bold text-white tracking-wide mt-1">ACE CMS</span>
           </div>
@@ -91,9 +89,6 @@ const Hero = () => {
       height={588}
       priority
     />
-    <div className="absolute -bottom-4 -right-4 bg-white/15 rounded-xl border border-white/30 p-3 shadow-xl">
-      <Image src={tool} alt="icon" className="md:w-12 md:h-12" width={48} height={48} />
-    </div>
   </div>
 
   <div className=" hidden lg:grid grid-cols-2 md:grid-cols-2 gap-6">
@@ -136,7 +131,7 @@ const Hero = () => {
                   </h1>
                 </div>
 
-                <p className=" text-base md:text-xl text-gray-200 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
+                <p className="  md:text-xl text-gray-200 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
                   Efficient, compliant, and <span className="text-cyan-300 font-semibold">cloud-based calibration management</span> tailored for manufacturing excellence.
                 </p>
 
@@ -155,13 +150,19 @@ const Hero = () => {
                   </div>
                 </div>
 
-                <div className="pt-4">
-                  <Link href="#contact" className="group inline-flex items-center gap-3 px-4 py-2 md:px-8 md:py-4 lg:px-6 lg:py-3 bg-gray-800  text-white text-lg font-bold rounded-lg  shadow-xl hover:shadow-2xl">
+                <div className="pt-4 flex gap-5 mx-auto justify-center lg:justify-start">
+                 <div>
+                   <Link href="#contact" className="group inline-flex items-center gap-3 px-4 py-2  md:px-8 md:py-3 lg:px-6 lg:py-3 bg-gray-800  text-white md:text-lg font-bold rounded  shadow-xl hover:shadow-2xl">
                     <span>Contact Us</span>
                     <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </Link>
+                 </div>
+                      <div className=''>
+                        <DemoButton/>
+                      </div>
+                  
                 </div>
 
            

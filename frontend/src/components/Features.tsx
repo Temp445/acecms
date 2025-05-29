@@ -19,8 +19,8 @@ const features = [
   },
   {
     icon: icon2,
-    title: 'Smart Internal Calibration – Parameter by Parameter',
-    description: 'Do internal calibration with auto-filled results—no more typing the same thing again and again.',
+    title: 'Smart Internal Calibration, including Calibration History and Alerts',
+    description: 'Smart internal calibration with auto-filled results—no more repeat entries. View calibration history and get alerts instantly.',
   },
    {
     icon: icon4,
@@ -29,8 +29,8 @@ const features = [
   },
   {
     icon: icon3,
-    title: 'MSA 4th Edition Done in Minutes',
-    description: 'Manual MSA takes hours—ACE CMS does it in minutes, fully industry compliant.',
+    title: 'Streamline your MSA process',
+    description: 'Auto-calculated trial results deliver accurate outcomes in just minutes.',
   },
  
   {

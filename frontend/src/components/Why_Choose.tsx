@@ -1,8 +1,7 @@
 
-
 import { CheckCircle,MoveRight } from 'lucide-react'
 import Image from 'next/image'
-import CMS from '../assets/CMS4.png'
+import CMS from '../assets/CMS_thumbnail.webp'
 import CMS1 from '../assets/image5.jpg'
 import arrow from '../assets/arrow1.png'
 import Link from 'next/link'
@@ -33,7 +32,7 @@ const Why_Choose = () => {
                 <Image 
                   src={CMS} 
                   alt="ACE CMS" 
-                  className="object-cover w-full h-full rounded-lg hover:scale-105" 
+                  className="object-cover w-full h-80 rounded-lg hover:scale-105" 
                 />
               </div>
             </div>
@@ -61,7 +60,7 @@ const Why_Choose = () => {
               {[
                 "Audit-ready, zero stress.",
                 "Calibrate smarter, not harder.",
-                "MSA done in minutes—not hours.",
+                "Streamline your MSA process.",
                 "Scan it. Know it. Done.",
                 "Your calibration, in your pocket.",
                 "100% Cloud-Based, No Data Loss"

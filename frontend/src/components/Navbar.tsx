@@ -22,7 +22,7 @@ const Navbar: FC = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between md:pt-5 lg:pb-10 px-4 md:px-0 lg:px-6 relative">
+      <nav className="flex items-center justify-between md:pt-3 lg:pb-10 px-4 md:px-0 lg:px-6 relative">
         <div className="md:flex items-center hidden ">
           <Link href="/" className="text-2xl md:text-xl lg:text-2xl xl:text-3xl font-bold text-white flex gap-1">
             <Image
@@ -30,7 +30,7 @@ const Navbar: FC = () => {
               alt="logo"
               width={100}
               height={100}
-              className="w-12 h-12 md:w-10 md:h-10 lg:w-12 lg:h-12  "
+              className="w-12 h-12 md:w-10 md:h-10 lg:w-12 lg:h-12 drop-shadow-sm drop-shadow-indigo-600 "
             />
             <span className="mt-2">ACE CMS </span>
           </Link>
@@ -136,7 +136,7 @@ const Navbar: FC = () => {
         <div className="hidden md:flex items-center space-x-4">
           <Link
             href="https://webapp.acecms.in/"
-            className="bg-green-700 text-white px-4 py-1 md:px-2 lg:px-6 xl:py-2 rounded-md font-medium hover:opacity-90 transition"
+            className="border hover:border-green-600 hover:bg-green-600 text-white px-3 py-1 md:px-2 lg:px-6 xl:py-2 rounded-md font-medium  transition"
           >
             Sign In
           </Link>

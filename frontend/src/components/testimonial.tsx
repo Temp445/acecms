@@ -25,7 +25,7 @@ const testimonials = [
   {
     id: 3,
     logo:icon3,
-    name: 'Praveen',
+    name: 'Vijaya Prakash',
     company: 'RANE TRW STEERING SYSTEMS Pvt Ltd',
     quote: 'Since implementing this solution, our calibration workflows have become markedly more efficient. The system’s reliability and ease of use have exceeded our expectations.',
   }
