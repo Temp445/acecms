@@ -26,6 +26,7 @@ const Form: React.FC = () => {
     number: string;
     location: string;
     queries: string;
+    product: string;
   }) => {
     if (!stromxToken || !adminPhones || adminPhones.length === 0) {
       console.warn("Missing Stromx token or admin phone numbers.");
@@ -86,6 +87,7 @@ const Form: React.FC = () => {
       email: HTMLInputElement;
       number: HTMLInputElement;
       location: HTMLInputElement;
+      product: HTMLInputElement;
       queries: HTMLTextAreaElement;
     };
 
@@ -95,6 +97,7 @@ const Form: React.FC = () => {
       email: elements.email.value,
       number: elements.number.value,
       location: elements.location.value,
+      product: elements.product.value,
       queries: elements.queries.value
     };
 
@@ -109,7 +112,7 @@ const Form: React.FC = () => {
 
     try {
       await Promise.all([
-        emailjs.sendForm(service_ID!, template_ID!, form.current, publicKey),
+        emailjs.send(service_ID!, template_ID!, formData, publicKey),
         sendWhatsAppNotification(formData)
       ]);
 
@@ -127,7 +130,6 @@ const Form: React.FC = () => {
     <div id="contact">
       <div className="mt-5 md:px-2">
         <div className="flex flex-col md:flex-row p-4 py-10 rounded-lg md:py-10 max-w-6xl mx-auto sm:mt-20 mb-20 justify-center">
-
           <div className="md:w-7/12 border p-5 md:p-10 rounded md:rounded-none md:rounded-l-sm md:border-sky-800">
             <h2 className="text-xl md:text-3xl font-semibold text-gray-800 mb-6">
               Get in touch and <strong className="text-sky-800">schedule your demo now!</strong>
@@ -199,7 +201,7 @@ const Form: React.FC = () => {
             </form>
           </div>
 
-          <div className="mt-20 md:mt-0 md:w-5/12 bg-sky-700 text-white border md:border-l-0 rounded md:rounded-none md:rounded-r-sm">
+          <div className="mt-20 md:mt-0 md:w-5/12 bg-sky-700  border-e-sky-800 border-y-sky-800 border-l-sky-800text-white border md:border-l-0 rounded md:rounded-none md:rounded-r-sm">
             <div className="h-48 relative overflow-hidden">
               <div className="absolute inset-0 bg-blue-50 bg-opacity-20 flex flex-col items-center justify-center">
                 <Image fill src={icon} alt="bg" className="w-full h-full object-cover object-center opacity-50" />
@@ -216,8 +218,8 @@ const Form: React.FC = () => {
                   <Mails className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg">Email Us</h4>
-                  <p className="mt-1 text-sm">sales@acesoft.in</p>
+                  <h4 className="font-semibold text-lg text-white">Email Us</h4>
+                  <p className="mt-1 text-sm text-white">sales@acesoft.in</p>
                 </div>
               </div>
 
@@ -226,9 +228,9 @@ const Form: React.FC = () => {
                   <PhoneCall className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg">Call Us</h4>
-                  <p className="mt-1 text-sm">+91 9840137210</p>
-                  <p className="opacity-90 text-sm">Mon-Sat from 10am to 6:30pm</p>
+                  <h4 className="font-semibold text-lg text-white">Call Us</h4>
+                  <p className="mt-1 text-sm text-white">+91 9840137210</p>
+                  <p className="opacity-90 text-sm text-white">Mon-Sat from 10am to 6:30pm</p>
                 </div>
               </div>
 
@@ -237,8 +239,8 @@ const Form: React.FC = () => {
                   <MapPinned className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg">Visit Us</h4>
-                  <p className="mt-1 text-sm">
+                  <h4 className="font-semibold text-lg text-white">Visit Us</h4>
+                  <p className="mt-1 text-sm text-white">
                     #306, 2nd Floor NSIC - Software Technology Business Park B 24, Guindy Industrial Estate
                     Ekkatuthangal, Chennai - 600032
                   </p>
