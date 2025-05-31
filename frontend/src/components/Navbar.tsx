@@ -136,7 +136,7 @@ const Navbar: FC = () => {
         <div className="hidden md:flex items-center space-x-4">
           <Link
             href="https://webapp.acecms.in/"
-            className="border hover:border-green-600 hover:bg-green-600 text-white px-3 py-1 md:px-2 lg:px-6 xl:py-2 rounded-md font-medium  transition"
+            className="border  hover:underline hover:text-blue-700 hover:bg-white text-white px-3 py-1 md:px-2 lg:px-6 xl:py-2 rounded-md font-medium  transition"
           >
             Sign In
           </Link>
