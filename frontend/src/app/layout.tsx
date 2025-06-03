@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Urbanist } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import 'swiper/css';
 
@@ -33,6 +34,19 @@ export default function RootLayout({
     <html lang="en">
        <head>
       <link rel="icon" href="/AceLogo.png" />
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11528496617"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-11528496617');
+          `}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${urbanist.variable} antialiased`}

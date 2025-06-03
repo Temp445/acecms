@@ -33,14 +33,6 @@ const Hero = () => {
             <Image src={image5} alt="icon" className="w-10 h-10 opacity-70" width={12} height={12} />
           </div>
         </div>
-       
-        <div className="hidden lg:block absolute top-32 2xl:top-44 left-[800px]">
-          <div className="w-28 h-px bg-white/30" />
-        </div>
-        <div className="absolute top-72 right-16 md:right-24">
-          <div className="w-3 h-3 rounded-full border-2 border-white/40 bg-white/10" />
-        </div>
-     
 
         <div className="relative z-10 max-w- mx-auto px-4 sm:px-6 py-4">
           <nav aria-label="Main navigation">
@@ -52,7 +44,7 @@ const Hero = () => {
             <span className="text-lg font-bold text-white tracking-wide mt-1">ACE CMS</span>
           </div>
 
-          <section className="flex flex-col lg:flex-row items-center md:max-w-11/12 mx-auto justify-between  min-h-fit 2xl:pb-10  md:gap-12 lg:gap-8">
+          <section className="flex flex-col lg:flex-row items-center md:max-w-11/12 mx-auto justify-between   min-h-fit 2xl:pb-10  md:gap-12 lg:gap-8 xl:gap-10 2xl:gap-28">
             <div className="relative w-full  order-1 lg:order-2">
               <div className="relative max-w-lg mx-auto lg:mx-0">
                 <div className="absolute -inset-8 bg-violet-400/20 rounded-3xl blur-2xl" />
@@ -89,9 +81,7 @@ const Hero = () => {
         width={484}
         height={588}
       />
-      {/* <div className="hidden md:block absolute -bottom-4 -right-4 bg-white/15 rounded-xl border border-white/30 p-3 shadow-xl ">
-        <Image src={gear} alt="icon" className="md:w-8 md:h-8" width={48} height={48} />
-      </div> */}
+     
     </div>
   </div>
 </div>
