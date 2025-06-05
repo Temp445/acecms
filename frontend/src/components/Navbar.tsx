@@ -32,7 +32,7 @@ const Navbar: FC = () => {
               height={100}
               className="w-12 h-12 md:w-10 md:h-10 lg:w-12 lg:h-12 drop-shadow-sm drop-shadow-indigo-600 "
             />
-            <span className="mt-2">ACE CMS </span>
+            <span className="mt-2 flex flex-col">ACE CMS  <span className="text-[10px]">Calibration Management System </span></span>
           </Link>
         </div>
 

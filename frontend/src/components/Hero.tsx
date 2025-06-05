@@ -52,7 +52,7 @@ const Hero = () => {
 
   <div className="relative bg-white/10 rounded-2xl border border-white/20 p-2 md:p-6 shadow-2xl backdrop-blur-sm">
     <Image
-      src={img1}
+      src={img2}
       alt="image"
       className="w-full max-w-full mx-auto rounded-xl shadow-lg "
       width={484}
@@ -64,7 +64,7 @@ const Hero = () => {
   <div className=" hidden lg:grid grid-cols-2 md:grid-cols-2 gap-6">
     <div className="relative bg-white/10 rounded-2xl border border-white/20 p-2 md:p-4 shadow-2xl backdrop-blur-sm ">
       <Image
-        src={img2}
+        src={img1}
         alt="image"
         className="w-full max-w-full mx-auto rounded-lg shadow-lg  "
         width={484}
