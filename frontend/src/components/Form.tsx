@@ -69,9 +69,7 @@ const Form: React.FC = () => {
       return;
     } else {
       setPhoneError('');
-    }
-
-    
+    }  
 
     const formData = {
       name: (formCurrent['Name'] as HTMLInputElement)?.value || '',
