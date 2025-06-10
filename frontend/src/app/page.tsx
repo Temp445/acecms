@@ -1,3 +1,5 @@
+'use client'
+
 import Banner from '@/components/Banner'
 import BackToTop from '@/components/BackToTop'
 import Clients from '@/components/Clients'
@@ -11,9 +13,19 @@ import Scenario from '@/components/Scenario'
 import Testimonial from '@/components/testimonial'
 import Video from '@/components/Video'
 import Why_Choose from '@/components/Why_Choose'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { trackConversion } from '@/lib/google'
 
 const Home = () => {
+   
+  useEffect(() => {
+    trackConversion({
+      event: 'cms_homepage_view',
+      form_id: 'n/a',
+      form_name: 'CMS Homepage Visit'
+    });
+  }, []);
+  
   return (
     <div>
     <div className='container mx-auto absolute md:hidden'><Navbar/></div>

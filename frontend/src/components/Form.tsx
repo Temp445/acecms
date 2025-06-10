@@ -9,6 +9,7 @@ import { sendWhatsappMessage } from "../services/whatsapp/whatsappService";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import 'react-phone-number-input/style.css';
 import icon from "../assets/CF.jpg";
+import { trackConversion } from "@/lib/google";
 
 const service_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
 const template_ID = process.env.NEXT_PUBLIC_EMAILJS_ENQ_TEMPLATE_ID!;
@@ -80,6 +81,12 @@ const Form: React.FC = () => {
       queries: formCurrent['queries']?.value || '',
       product: formCurrent['product']?.value || '',
     };
+
+       trackConversion({
+            event: 'form_submission',
+            form_id: 'enquiry_form',
+            form_name: 'Enquiry Form'
+        });
 
     setLoading(true);
 

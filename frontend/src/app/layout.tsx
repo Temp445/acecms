@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Urbanist } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import "swiper/css";
-
-const CONVERSION_ID = process.env.NEXT_PUBLIC_GA_ADS_CONVERSION_ID;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,18 +33,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/AceLogo.png" />
-       
-<Script async src={`https://www.googletagmanager.com/gtag/js?id=${CONVERSION_ID}`}/>
-
-<Script id="google-ads-init" strategy="afterInteractive">
-{`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
- gtag('config', '${CONVERSION_ID}');
-  `}
-</Script>
 
       </head>
       <body

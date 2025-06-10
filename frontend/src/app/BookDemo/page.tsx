@@ -1,12 +1,19 @@
 'use client'
 
 import Header from "@/components/Navbar";
+import { trackConversion } from "@/lib/google";
 import React from "react";
 import { InlineWidget } from "react-calendly";
 
 
 const CalendlyEmbed = () => {
 const url = "https://calendly.com/dmadmin";
+
+trackConversion({
+      event: 'cms_bookdemo_view',
+      form_id: 'n/a',
+      form_name: 'CMS BookDemo Visit'
+    });
 
   return (
  <div className="bg-gray-900 max-h-screen" >
