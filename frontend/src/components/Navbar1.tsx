@@ -2,18 +2,12 @@
 import { FC, useState } from "react";
 import Link from "next/link";
 import {
-  House,
-  Star,
-  DollarSign,
-  FileText,
   Menu,
   X,
-  Calendar,
-  Users,
 } from "lucide-react";
 import Image from "next/image";
 import logo from "../assets/AceLogo.png";
-const Navbar: FC = () => {
+const Navbar1: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -22,17 +16,17 @@ const Navbar: FC = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between md:pt-3 lg:pb-10 px-4 md:px-0 lg:px-6 relative">
+      <nav className="hidden md:flex items-center justify-between md:pt-3 pb-2  px-4 md:px-0  relative">
         <div className="md:flex items-center hidden ">
-          <Link href="/" className="text-2xl md:text-xl lg:text-2xl xl:text-3xl font-bold text-white flex gap-1">
+          <Link href="https://acesoft.in/" className="text-2xl md:text-xl lg:text-2xl xl:text-3xl font-bold text-[#2b2d42] flex gap-1">
             <Image
               src={logo}
               alt="logo"
               width={100}
               height={100}
-              className="w-12 h-12 md:w-10 md:h-10 lg:w-12 lg:h-12 drop-shadow-sm drop-shadow-indigo-600 "
+              className="w-12 h-12 md:w-10 md:h-10  "
             />
-            <span className="mt-2 flex flex-col">ACE CMS  <span className="text-[12px]">Calibration Management System </span></span>
+            <span className="mt-2 text-xl">ACE Software Solutions Pvt. Ltd</span>
           </Link>
         </div>
 
@@ -50,40 +44,51 @@ const Navbar: FC = () => {
         </div>
 
         <div className="hidden md:flex items-center space-x-2">
-          <Link
-            href="#features"
-            className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-600"
+       <div className="group">
+           <Link
+            href="https://crm.acesoftcloud.in/"
+            className="flex items-center text-[#2b2d42]  border border-white  text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out   hover:scale-105"
           >
-            <Star className="w-4 h-4 mr-2" />
-            Features
+            Project
           </Link>
+            <div className="hidden group-hover:block absolute top-14 right-20  w-52 bg-white border  text-black text-xs p-2 rounded z-[52]">
+          Simplify Projects. Empower Teams.
+        </div>
+       </div>
+
+     <div className="group">
+           <Link
+            href="https://crm.acesoftcloud.in/"
+            className="flex items-center text-[#2b2d42]  border border-white  text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out   hover:scale-105"
+          >
+            CMS
+          </Link>
+            <div className="hidden group-hover:block absolute top-14 right-5  w-52 bg-white border shadow-2xl text-black text-xs p-2 rounded z-[52]">
+          Smart, simple, and seamless — calibration made easy 
+        </div>
+       </div>
+
+        <div className="group">
+           <Link
+            href="https://crm.acesoftcloud.in/"
+            className="flex items-center text-[#2b2d42]  border border-white  text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out   hover:scale-105"
+          >
+            PPAP
+          </Link>
+            <div className="hidden group-hover:block absolute top-14 right-2  w-52 bg-white border shadow-2xl text-black text-xs p-2 rounded z-[52]">
+          Ensuring Quality, Every Part, Every Time.
+        </div>
+       </div>
 
           <Link
-            href="#pricing"
-            className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-600"
+            href="https://acesoft.in/products"
+            className="flex items-center text-[#2b2d42]  border border-white   text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out  hover:scale-105"
           >
-            <DollarSign className="w-4 h-4 mr-2" />
-            Pricing
-          </Link>
-
-          <Link
-            href="/BookDemo"
-            className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-600"
-          >
-            <FileText className="w-4 h-4 mr-2" />
-            Book A Demo
-          </Link>
-
-          <Link
-            href="#client"
-            className="hidden  lg:flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-600"
-          >
-            <Users className="w-4 h-4 mr-2" />
-            Clients
+            All Product
           </Link>
         </div>
 
-        {isMenuOpen && (
+        {/* {isMenuOpen && (
           <div className="fixed bottom-14 md:top-full left-0.5 right-10 bg-white shadow-lg rounded py-4 px-6 z-50 md:hidden">
             <div className="flex flex-col space-y-4">
                <Link
@@ -131,19 +136,19 @@ const Navbar: FC = () => {
               </Link>
             </div>
           </div>
-        )}
-
+        )} */}
+{/* 
         <div className="hidden md:flex items-center space-x-4">
           <Link
-            href="https://webapp.acecms.in/"
-            className="border  hover:underline hover:text-blue-700 hover:bg-white text-white px-3 py-1 md:px-2 lg:px-6 xl:py-2 rounded-md font-medium  transition"
+            href="#"
+            className="border  hover:underline hover:text-blue-700 hover:bg-white text-[#2b2d42] px-3 py-1 md:px-2 lg:px-6 xl:py-2 rounded-md font-medium  transition"
           >
             Sign In
           </Link>
-        </div>
+        </div> */}
       </nav>
 
-      <div className="fixed bottom-0 left-0 right-0  flex justify-between items-center  md:hidden z-[100]">
+      {/* <div className="fixed bottom-0 left-0 right-0  flex justify-between items-center  md:hidden z-[100]">
         <button
           onClick={toggleMenu}
           className="flex flex-col items-center justify-center text-gray-100"
@@ -154,7 +159,7 @@ const Navbar: FC = () => {
         </button>
 
         <Link
-          href="https://webapp.acecms.in/"
+          href="#"
           className="flex flex-col items-center justify-center text-white w-full"
         >
           <span className="w-full h-12  bg-gradient-to-r from-red-500 to-red-400 flex items-center justify-center">
@@ -163,7 +168,7 @@ const Navbar: FC = () => {
         </Link>
 
         <Link
-          href="/BookDemo"
+          href="#contact"
           className="flex flex-col items-center justify-center text-gray-600"
         >
           <div className="w-12 h-12  bg-gradient-to-r from-blue-500 to-blue-400 flex items-center justify-center">
@@ -172,9 +177,9 @@ const Navbar: FC = () => {
         </Link>
       </div>
 
-      <div className="h-16 md:hidden"></div>
+      <div className="h-16 md:hidden"></div> */}
     </>
   );
 };
 
-export default Navbar;
+export default Navbar1;

@@ -15,6 +15,8 @@ import Video from '@/components/Video'
 import Why_Choose from '@/components/Why_Choose'
 import React, { useEffect } from 'react'
 import { trackConversion } from '@/lib/google'
+import Navbar1 from '@/components/Navbar1'
+
 
 const Home = () => {
    
@@ -28,6 +30,7 @@ const Home = () => {
   
   return (
     <div>
+      <div><Navbar1/></div>
     <div className='container mx-auto absolute md:hidden'><Navbar/></div>
     <Hero/>
     <Why_Choose/>

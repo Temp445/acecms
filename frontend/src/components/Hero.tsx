@@ -50,7 +50,7 @@ const Hero = () => {
                 <div className="absolute -inset-8 bg-violet-400/20 rounded-3xl blur-2xl" />
                <div className="grid grid-cols-1 gap-6">
 
-  <div className="relative bg-white/10 rounded-2xl border border-white/20 p-2 md:p-6 shadow-2xl backdrop-blur-sm">
+  <div className="relative bg-white/10 rounded-2xl border border-white/20 p-2 md:mt-10 lg:mt-0 md:p-6 shadow-2xl backdrop-blur-sm">
     <Image
       src={img2}
       alt="image"
@@ -88,11 +88,11 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="w-full text-center lg:text-left order-2 lg:order-1 mt-10 ">
+            <div className="w-full text-center lg:text-left order-2 lg:order-1 mt-10 md:mt-0 lg:mt-10 ">
               <div className="max-w-2xl mx-auto lg:mx-0 space-y-6 md:space-y-8  ">
                 <div className="space-y-4">
-                  <h1 className='md:hidden text-xl text-white font-bold md:text-center'>Streamline Calibration Management, Ensure Regulatory Compliance, and Boost Efficiency with ACE CMS.</h1>
-                  <h1 className=" hidden md:block text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-black text-white leading-tight">
+                  <h1 className=' text-xl text-white font-bold md:text-center md:text-4xl lg:hidden'>Streamline Calibration Management, Ensure Regulatory Compliance, and Boost Efficiency with ACE CMS.</h1>
+                  <h1 className=" hidden lg:block  text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-black text-white leading-tight">
                     Streamline Calibration Management and Ensure Compliance with <span className='relative text-white'>ACE CMS
                        <div className="absolute -bottom-2 left-0 right-0 h-1 bg-cyan-400 rounded-full" />
                     </span>
