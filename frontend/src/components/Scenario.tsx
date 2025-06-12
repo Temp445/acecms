@@ -3,10 +3,20 @@ import Image from 'next/image';
 import React from 'react';
 import cms from '../assets/CMS1.png'
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 
 
 const Scenario = () => {
+ 
+  const t = useTranslations("Scenario")
+const cmsName = "ACE CMS";
 
+  const locale = useLocale();
+
+const textSize={
+  de: 'text-3xl'
+}[locale] || 'text-5xl';
 
   return (
     <div className="flex w-full min-h-fit  items-center justify-center py-12 px-4 sm:px-6 lg:px-20 mt-2  ">
@@ -15,16 +25,16 @@ const Scenario = () => {
         <div className='hidden w-2 h-32  lg:flex  absolute bg-sky-600  rounded-l right-0 bottom-10'></div>
 
         <div className="lg:w-1/2 mb-6 md:mb-0 md:pr-8 order-2 lg:order-1">
-          <h1 className="text-xl sm:text-4xl lg:text-3xl xl:text-5xl font-bold mb-4 text-gray-800">
-            ACE Calibration Management System
+          <h1 className={`text-xl sm:text-4xl lg:text-3xl xl:${textSize} font-bold mb-4 text-gray-800`}>
+            {t('Title')}
           </h1>
-          <p className=" text-sm md:text-lg text-justify sm:text-xl lg:text-sm xl:text-xl text-gray-600 leading-relaxed md:mt-5">
-            Imagine your next audit — no more paper trails, no more scrambling for certificates. 
-            With <span className="font-semibold text-sky-800">ACE CMS</span>, everything you need is ready at a click, 
-            and your auditors are impressed. Your team stays calm, focused, and confident that everything is in order.
+          <p className=" text-sm md:text-lg text-justify sm:text-xl lg:text-sm xl:text-xl text-gray-600 leading-relaxed md:mt-5">      
+            {t.rich('Description', {
+              cms: () => <span className="font-semibold text-sky-800">{cmsName}</span>
+            })}
           </p>
 <div className='mt-5 md:mt-10'>
-          <Link href="/BookDemo"  className='text-sm md:text-base mt-6 p-2 rounded bg-sky-600 text-white '>Book A Demo</Link>
+          <Link href="/BookDemo"  className='text-sm md:text-base mt-6 p-2 rounded bg-sky-600 text-white '>{t('bookDemo')}</Link>
 </div>
         </div>
 

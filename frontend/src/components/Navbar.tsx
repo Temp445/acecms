@@ -13,7 +13,10 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import logo from "../assets/AceLogo.png";
+import { useTranslations } from "next-intl";
+
 const Navbar: FC = () => {
+  const t = useTranslations('Navbar')
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -32,7 +35,7 @@ const Navbar: FC = () => {
               height={100}
               className="w-12 h-12 md:w-10 md:h-10 lg:w-12 lg:h-12 drop-shadow-sm drop-shadow-indigo-600 "
             />
-            <span className="mt-2 flex flex-col">ACE CMS  <span className="text-[12px]">Calibration Management System </span></span>
+            <span className="mt-2 flex flex-col">ACE CMS  <span className="text-[12px]">{t('Subtitle')} </span></span>
           </Link>
         </div>
 
@@ -55,7 +58,7 @@ const Navbar: FC = () => {
             className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-600"
           >
             <Star className="w-4 h-4 mr-2" />
-            Features
+            {t('Links.Features')}
           </Link>
 
           <Link
@@ -63,7 +66,7 @@ const Navbar: FC = () => {
             className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-600"
           >
             <DollarSign className="w-4 h-4 mr-2" />
-            Pricing
+           {t('Links.Pricing')}
           </Link>
 
           <Link
@@ -71,7 +74,7 @@ const Navbar: FC = () => {
             className="flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-600"
           >
             <FileText className="w-4 h-4 mr-2" />
-            Book A Demo
+            {t('Links.BookDemo')}
           </Link>
 
           <Link
@@ -79,7 +82,7 @@ const Navbar: FC = () => {
             className="hidden  lg:flex items-center text-white hover:text-white text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:bg-orange-600"
           >
             <Users className="w-4 h-4 mr-2" />
-            Clients
+            {t('Links.Clients')}
           </Link>
         </div>
 
@@ -92,7 +95,7 @@ const Navbar: FC = () => {
                 className="flex items-center text-gray-800 hover:text-orange-600 text-base font-semibold"
               >
                 <House className="w-4 h-4 mr-2" />
-                Home
+                {t('Links.Home')}
               </Link>
               <Link
                 href="#features"
@@ -100,7 +103,7 @@ const Navbar: FC = () => {
                 className="flex items-center text-gray-800 hover:text-orange-600 text-base font-semibold"
               >
                 <Star className="w-4 h-4 mr-2" />
-                Feature
+                {t('Links.Features')}
               </Link>
 
               <Link
@@ -109,7 +112,7 @@ const Navbar: FC = () => {
                 className="flex items-center text-gray-800 hover:text-orange-600 text-base font-semibold"
               >
                 <DollarSign className="w-4 h-4 mr-2" />
-                Pricing
+                 {t('Links.Pricing')}
               </Link>
 
               <Link
@@ -118,7 +121,7 @@ const Navbar: FC = () => {
                 className="flex items-center text-gray-800 hover:text-orange-600 text-base font-semibold"
               >
                 <FileText className="w-4 h-4 mr-2" />
-                Contact Us
+                {t('Links.Contact')}
               </Link>
 
               <Link
@@ -127,7 +130,7 @@ const Navbar: FC = () => {
                 className="flex items-center text-gray-800 hover:text-orange-600 text-base font-semibold"
               >
                 <Users className="w-4 h-4 mr-2" />
-                Clients
+                {t('Links.Clients')}
               </Link>
             </div>
           </div>
@@ -138,7 +141,7 @@ const Navbar: FC = () => {
             href="https://webapp.acecms.in/"
             className="border  hover:underline hover:text-blue-700 hover:bg-white text-white px-3 py-1 md:px-2 lg:px-6 xl:py-2 rounded-md font-medium  transition"
           >
-            Sign In
+            {t('Links.SignIn')}
           </Link>
         </div>
       </nav>
@@ -158,7 +161,7 @@ const Navbar: FC = () => {
           className="flex flex-col items-center justify-center text-white w-full"
         >
           <span className="w-full h-12  bg-gradient-to-r from-red-500 to-red-400 flex items-center justify-center">
-            Sign In
+            {t('Links.SignIn')}
           </span>
         </Link>
 

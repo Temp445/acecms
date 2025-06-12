@@ -25,7 +25,9 @@ interface GtagEvent {
 // Global declarations
 declare global {
   interface Window {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
     dataLayer?: any[];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
     gtag: (...args: any[]) => void;
   }
 }
@@ -69,12 +71,10 @@ const loadGoogleAdsScript = (): Promise<void> => {
     
     script.onload = () => {
       try {
-    
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = function() {
-          window.dataLayer!.push(arguments);
-        };
-        
+      window.gtag = (...args: unknown[]) => {
+      window.dataLayer!.push(...args);
+      };
+
         // Configure gtag
         window.gtag('js', new Date());
         window.gtag('config', AD_ID!, {
@@ -181,7 +181,7 @@ export const trackPageView = async (page_title?: string, page_location?: string)
     if (!isGtagReady() || !validateConfig()) {
       throw new Error('Google Ads is not properly initialized');
     }
-    
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
     const eventData: any = {
       send_to: AD_ID,
     };

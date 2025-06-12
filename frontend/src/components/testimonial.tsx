@@ -6,53 +6,59 @@ import icon1 from '../assets/ClientImages/image-15.png'
 import icon2 from '../assets/ClientImages/image-5.png'
 import icon3 from '../assets/ClientImages/image-1.png'
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
-const testimonials = [
+
+
+export default function TestimonialCarousel() {
+ 
+  const t = useTranslations('Testimonial')
+
+
+
+
+  const testimonials = [
   {
     id: 1,
     logo:icon1,
     name: 'Praveena',
     company: 'Asahi India Glass Ltd',
-    quote: 'Our company values the precision and reliability of this calibration system, which is essential to maintaining our quality standards.',
+    quote: t('Quote1')
   },
   {
     id: 2,
     logo:icon2,
     name: 'Arun',
     company: 'Wonjin Autoparts India Pvt Ltd',
-    quote: 'Implementing this system has substantially reduced the time and errors associated with our calibration procedures, contributing to smoother daily operations.',
+    quote: t('Quote2')
   },
   {
     id: 3,
     logo:icon3,
     name: 'Vijaya Prakash',
     company: 'RANE TRW STEERING SYSTEMS Pvt Ltd',
-    quote: 'Since implementing this solution, our calibration workflows have become markedly more efficient. The system’s reliability and ease of use have exceeded our expectations.',
+    quote: t('Quote3')
   }
 ];
 
-export default function TestimonialCarousel() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+    setCurrentTestimonial((prev) =>
+      prev === 0 ? testimonials.length - 1 : prev - 1
+    );
   };
 
   useEffect(() => {
     if (isHovered) return;
 
     const interval = setInterval(() => {
-      nextTestimonial();
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isHovered]);
-
+  }, [isHovered, testimonials.length]);
   const { name, company, quote, logo } = testimonials[currentTestimonial];
 
   return (
@@ -60,7 +66,7 @@ export default function TestimonialCarousel() {
       className='bg-sky-700 py-10 mt-10 px-2 md:px-10'
     >
       <h1 className='text-center text-2xl md:text-3xl font-bold pb-5 text-white'>
-        Authentic Customer Feedback
+        {t('Title')}
       </h1>
 
       <div
@@ -76,7 +82,9 @@ export default function TestimonialCarousel() {
             <ChevronLeft className="w-6 h-6 text-gray-600" />
           </button>
           <button 
-            onClick={nextTestimonial} 
+            onClick={() =>
+              setCurrentTestimonial(
+                (prev) => (prev + 1) % testimonials.length )}
             className="absolute right-0 top-1/2 transform -translate-y-1/2 hidden md:block  hover:bg-gray-200 rounded-full md:p-2"
           >
             <ChevronRight className="w-6 h-6 text-gray-600" />

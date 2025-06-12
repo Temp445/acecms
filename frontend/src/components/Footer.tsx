@@ -1,8 +1,11 @@
 
 import Image from 'next/image';
 import logo from '../assets/logo.svg'
-
+import { useTranslations } from 'next-intl';
 const Footer = () => {
+ 
+  const t = useTranslations('Footer')
+
   return (
     <footer className="bg-gray-700 text-gray-300 pb-20 -mt-20">
       <div>
@@ -14,24 +17,24 @@ const Footer = () => {
 
           <div className='w-80'>
             <div className="text-lg font-semibold text-white flex gap-2"> <Image src={logo} alt="logo" width={100} height={100} className='w-6 h-6' /> ACE CMS</div>
-            <p className="mt-2 text-sm flex flex-wrap">ACE CMS brings efficiency, traceability, and compliance to calibration management. By leveraging automation, real-time data, and cloud flexibility, it transforms a traditionally manual and error-prone process into a streamlined, audit-ready system—saving time, reducing risk, and ensuring quality.</p>
+            <p className="mt-2 text-sm flex flex-wrap">{t('Description')}</p>
           </div>
 
         <div className='flex gap-14 xl:gap-28'>
               <div>
-            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-white">{t('QuickLinks.Title')}</h4>
             <ul className="mt-2 space-y-2 text-sm">
-              <li><a href="#features" className="hover:text-orange-400">Features</a></li>
-              <li><a href="#client" className="hover:text-orange-400">Clients</a></li>
-              <li><a href="#pricing" className="hover:text-orange-400">Pricing</a></li>
-              <li><a href="#contact" className="hover:text-orange-400">Contact</a></li>
+              <li><a href="#features" className="hover:text-orange-400">{t('QuickLinks.Features')}</a></li>
+              <li><a href="#client" className="hover:text-orange-400">{t('QuickLinks.Clients')}</a></li>
+              <li><a href="#pricing" className="hover:text-orange-400">{t('QuickLinks.Pricing')}</a></li>
+              <li><a href="#contact" className="hover:text-orange-400">{t('QuickLinks.Contact')}</a></li>
 
             </ul>
           </div>
 
    
           <div>
-            <h4 className="text-lg font-semibold text-white">Follow Us</h4>
+            <h4 className="text-lg font-semibold text-white">{t('FollowUs.Title')}</h4>
             <ul className="mt-2 space-y-2 text-sm">
               <li><a href="https://www.facebook.com/people/Ace-Software-Solutions-Pvt-Ltd/61565550617223/" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400">Facebook</a></li>
               <li><a href="https://youtube.com/@acesoftwaresolutions?si=KqZ0BFZg5pNmGBqk" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400">Youtube</a></li>

@@ -6,6 +6,8 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import Image from "next/image";
 import CMS from "../assets/CMS4.png";
 
+import { useTranslations } from "next-intl";
+
 export default function Video() {
   const [showVideoOverlay, setShowVideoOverlay] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -31,6 +33,8 @@ export default function Video() {
     }
   };
 
+  const t = useTranslations('Hero');
+
   return (
     <div className="container mt-5 md:mt-12 mx-auto">
       <div className="w-full  flex  justify-center container mx-auto p-4 ">
@@ -46,7 +50,7 @@ export default function Video() {
             aria-label="Watch demo video"
           >
             <SiGoogledisplayandvideo360 className="text-base md:text-2xl" />
-            <span className="text-base font-semibold">Watch Demo</span>
+            <span className="text-base font-semibold">{t('watchDemo')}</span>
           </button>
         </div>
 

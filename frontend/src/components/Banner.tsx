@@ -4,9 +4,11 @@ import React from 'react';
 import android  from '../assets/app.svg'
 import icon  from '../assets/icon10.png'
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 const Banner = () => {
     
+  const t= useTranslations('Banner')
   
   return (
          <div className='bg-blue-600 mt-8 md:mt-10'>
@@ -29,14 +31,14 @@ const Banner = () => {
     
       <div className="lg:w-1/2 md:text-center lg:text-left space-y-4">
         <h1 className=" text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold  lg:block  text-white text-center lg:text-left ">
-          Access Anytime via <span className='flex text-center lg:text-left lg:justify-start mx-auto justify-center  '><span className='bg-clip-text text-transparent bg-orange-600  font-bold'>Android Device</span>  <Image src={icon} alt="icon" className='w-6 h-6 md:w-10 mt-2 md:h-10 ml-2' /></span>
+          {t('Heading')} <span className='flex text-center lg:text-left lg:justify-start mx-auto justify-center  '><span className='bg-clip-text text-transparent bg-orange-600  font-bold'>{t('device')}</span>  <Image src={icon} alt="icon" className='w-6 h-6 md:w-10 mt-2 md:h-10 ml-2' /></span>
         </h1>
         <p className="text-gray-300 text-base md:text-lg text-justify 2xl:w-11/12">
-         Easily check your calibration info on your phone anytime, anywhere. Access real-time data, track history, and stay audit-ready on the go, all without needing a desktop.
+        {t('Description')}
         </p>
     <div className='mt-5 md:mt-10 hidden md:block'> 
         <Link href="https://webapp.acecms.in/" className=" text-sm md:text-base  mt-4 p-1.5 md:p-0 md:px-3 md:py-2 border border-white text-white hover:border-indigo-700 hover:text-white rounded shadow-lg hover:bg-indigo-700  transition">
-          Tap to enter
+          {t('Tap')}
         </Link>
     </div>
       </div>

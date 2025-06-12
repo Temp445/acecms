@@ -10,66 +10,29 @@ import icon7 from '../assets/icon7.png'
 import icon8 from '../assets/icon8.png'
 import icon9 from '../assets/icon9.png'
 
+import { useTranslations } from 'next-intl'
 
-const features = [
-  {
-    icon: icon1,
-    title: 'Audit-Ready, Always',
-    description: "No more scrambling during audits—everything's stored right and shown instantly. Auditors will be impressed.",
-  },
-  {
-    icon: icon2,
-    title: 'Smart Internal Calibration, including Calibration History and Alerts',
-    description: 'Smart internal calibration with auto-filled results—no more repeat entries. View calibration history and get alerts instantly.',
-  },
-   {
-    icon: icon4,
-    title: 'QR / Bar Code Stickers for Every Instrument',
-    description: 'Generate, print, and stick codes—just scan to instantly view all instrument details. No more searching.',
-  },
-  {
-    icon: icon3,
-    title: 'Streamline your MSA process',
-    description: 'Auto-calculated trial results deliver accurate outcomes in just minutes.',
-  },
- 
-  {
-    icon: icon5,
-    title: 'Android App for On-the-Go Access',
-    description: 'Check calibration info anytime, anywhere—right from your mobile.',
-  },
-  {
-    icon: icon6,
-    title: 'Live Calibration Status Dashboard',
-    description: 'Get a bird’s-eye view of your company’s entire calibration status in one clean dashboard.',
-  },
-  {
-    icon: icon7,
-    title: 'Seamless Excel Data Migration',
-    description: 'We handle the Excel import for you—zero stress, zero data loss.',
-  },
-  {
-    icon: icon8,
-    title: 'All the Reports You’ll Ever Need',
-    description: 'Calibration reports, certificates, due lists—you name it, ACE CMS has it.',
-  },
-  {
-    icon: icon9,
-    title: '100% Cloud-Based, No Data Loss',
-    description: 'Your data is safely stored in the cloud—always accessible, always secure.',
-  },
-]
+const featureIcons = [icon1, icon2, icon4, icon3, icon5, icon6, icon7, icon8, icon9];
+
+type Feature = {
+  title: string;
+  description: string;
+};
 
 const Features = () => {
+
+  const t = useTranslations('Features');
+   const features: Feature[] = t.raw('List');
+
   return (
     <div className="py-10 md:py-16   md:mt-10" id="features">
       <div className=" px-4 sm:px-6 lg:px-8 container mx-auto relative">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-4xl font-bold mb-4 text-gray-900 ">
-            What We Offer
+           {t('Heading')}
           </h2>
           <p className="md:text-lg text-slate-700 max-w-5xl mx-auto text-justify md:text-center">
-            ACE CMS is a smart calibration management system that streamlines every step—from data import to audit prep—so you can stay compliant, save time, and keep every instrument tracked and up to date, wherever you are.
+            {t('Subheading')}
           </p>
         </div>
 
@@ -81,7 +44,7 @@ const Features = () => {
             >
               <div className="flex items-start">
                 <div className="w-24 md:w-28 mr-4">
-                  <Image src={feature.icon} alt={feature.title} width={100} height={100} />
+                  <Image src={featureIcons[index]} alt={feature.title} width={100} height={100} />
                 </div>
                 <div>
                   <h3 className="text-base md:text-xl font-semibold text-slate-800 mb-3">{feature.title}</h3>

@@ -5,10 +5,20 @@ import CMS from '../assets/CMS_thumbnail.webp'
 import CMS1 from '../assets/image5.jpg'
 import arrow from '../assets/arrow1.png'
 import Link from 'next/link'
-
+import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 
 const Why_Choose = () => {
- 
+  const t = useTranslations('WhyChoose');
+
+  const locale = useLocale();
+
+  const width = {
+    en: 'md:w-36',
+    zh: 'md:w-32',
+    it: 'md:w-36',
+    ja: 'md:w-40',
+  }[locale] || 'md:w-40';
 
   return (
     <section className="pt-16 container mx-auto ">
@@ -43,27 +53,26 @@ const Why_Choose = () => {
         
           <div className="w-full xl:w-7/12 space-y-6  border border-gray-200  sm:border-0 pt-5 pb-10 px-2 lg:px-12 xl:px-2 rounded">
             <div className="inline-block bg-blue-50 text-sky-800 px-4 py-1 rounded-full font-medium">
-              Why Choose Us?
+              {t('badge')}
             </div>
             
             <h2 className="text-xl md:3xl  2xl:text-4xl font-bold text-gray-800 leading-tight">
-               ACE CMS – Smart <span className='text-sky-800 mr-2'>Calibration Management</span> <br className='hidden xl:block' />Made Simple
+               {t('heading.part1')} <span className='text-sky-800 mr-2'>{t('heading.part2')}</span> <br className='hidden xl:block' />{t('heading.part3')}
               <span className="text-blue-600"></span>
             </h2>
             
             <p className="text-sm lg:text-lg text-gray-600">
-              At <strong>ACE CMS</strong>, we don&apos;t just help you manage calibration—we help you master it. 
-              Here&apos;s why leading companies trust us:
+              {t('description')}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
               {[
-                "Audit-ready, zero stress.",
-                "Calibrate smarter, not harder.",
-                "Streamline your MSA process.",
-                "Scan it. Know it. Done.",
-                "Your calibration, in your pocket.",
-                "100% Cloud-Based, No Data Loss"
+               t('point1'),
+               t('point2'),
+               t('point3'),
+               t('point4'),
+               t('point5'),
+               t('point6'),
               ].map((item, index) => (
                 <div 
                   key={index} 
@@ -75,9 +84,9 @@ const Why_Choose = () => {
               ))}
             </div>
             
-        <div className='w-[130px] md:w-36'>
+        <div className={`w-[130px] ${width} `}>
               <Link href="#features" className=" text-sm  mt-6 bg-sky-600 text-white font-medium py-2 px-2 gap-3 md:py-2 md:px-3 rounded shadow-md transition-colors duration-300  flex items-center md:gap-5">
-              Learn More
+              {t('learnMore')}
                <MoveRight size={20}/>
             </Link>
         </div>

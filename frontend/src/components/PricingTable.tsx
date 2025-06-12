@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-
 import { LuSquareArrowOutUpRight } from 'react-icons/lu';
+import { useTranslations } from 'next-intl';
 
 interface Feature {
   name: string;
@@ -16,6 +16,7 @@ interface Feature {
 
 interface Plan {
   name: string;
+  displayname: string;
   desc: string;
   tools?: string;
   Price?: string;
@@ -31,29 +32,32 @@ interface FeatureIconProps {
 }
 
 const PricingTable: React.FC = () => {
+  const t = useTranslations('Pricing');
+
   const features: Feature[] = [
-    { name: 'User Limit', Essential: true, EssentialNote: '5', BasicPlus: true, BasicPlusNote: '15', premium: true, premiumNote: 'Unlimited' },
-    { name: 'External Calibration Certificate Upload', Essential: true, BasicPlus: undefined, premium: undefined },
-    { name: 'Internal & External Calibration Certificate Upload', Essential: undefined, BasicPlus: true, premium: true },
-    { name: 'Calibration History & Reports', Essential: true, EssentialNote: '', BasicPlus: true, BasicPlusNote: '', premium: true, premiumNote: '' },
-    { name: 'Email Alerts for Calibration Due Dates', Essential: true, BasicPlus: true, premium: true },
-    { name: 'Add & Track Instruments & Locations', Essential: true, BasicPlus: true, premium: true },
-    { name: 'QR/Barcode Generator & Scan-to-View', Essential: true, EssentialNote: '', BasicPlus: true, BasicPlusNote: '', premium: true },
-    { name: 'Internal Calibration Certificate Module', Essential: false, BasicPlus: true, premium: true },
-    { name: 'Wear Pattern Analysis', Essential: false, BasicPlus: true, premium: true },
-    { name: 'MSA 4th Edition Compliance Support', Essential: false, EssentialNote: '', BasicPlus: false, BasicPlusNote: '', premium: true },
-    { name: 'Android App Access', Essential: true, BasicPlus: true, premium: true },
-    { name: 'Custom Logos on Reports ', Essential: true, BasicPlus: true, premium: true },
-    { name: 'Custom User Roles & Permissions', Essential: true, BasicPlus: true, premium: true },
-    { name: 'API & Advanced Data Export', Essential: true, BasicPlus: true, premium: true },
-    { name: 'Assign a specific document number to each report', Essential: true, BasicPlus: true, premium: true },
+    { name: 'UserLimit', Essential: true, EssentialNote: '5', BasicPlus: true, BasicPlusNote: '15', premium: true, premiumNote: 'Unlimited' },
+    { name: 'ExternalCertUpload', Essential: true },
+    { name: 'InternalExternalCertUpload', BasicPlus: true, premium: true },
+    { name: 'CalibrationHistoryReports', Essential: true, BasicPlus: true, premium: true },
+    { name: 'EmailAlerts', Essential: true, BasicPlus: true, premium: true },
+    { name: 'TrackInstrumentsLocations', Essential: true, BasicPlus: true, premium: true },
+    { name: 'QRBarcode', Essential: true, BasicPlus: true, premium: true },
+    { name: 'InternalCertModule', Essential: false, BasicPlus: true, premium: true },
+    { name: 'WearPatternAnalysis', Essential: false, BasicPlus: true, premium: true },
+    { name: 'MSACompliance', Essential: false, BasicPlus: false, premium: true },
+    { name: 'AndroidAppAccess', Essential: true, BasicPlus: true, premium: true },
+    { name: 'CustomLogos', Essential: true, BasicPlus: true, premium: true },
+    { name: 'CustomUserRoles', Essential: true, BasicPlus: true, premium: true },
+    { name: 'APIExport', Essential: true, BasicPlus: true, premium: true },
+    { name: 'DocumentNumbering', Essential: true, BasicPlus: true, premium: true },
   ];
 
   const plans: Plan[] = [
     {
       name: 'Essential',
-      desc: 'Best for calibration beginners',
-      buttonText: 'Contact Us',
+      displayname:t('Plans.Essential'),
+      desc: t('EssentialTagline'),
+      buttonText: t('ContactUs'),
       buttonlink: '#contact',
       buttonClass: 'bg-none border text-black hover:bg-sky-600 hover:text-white',
       highlighted: false,
@@ -61,21 +65,23 @@ const PricingTable: React.FC = () => {
     },
     {
       name: 'Standard',
-      desc: 'For growing teams needing automation',
-      buttonText: 'Contact Us',
+      displayname: t('Plans.Standard'),
+      desc: t('StandardTagline'),
+      buttonText: t('ContactUs'),
       buttonlink: '#contact',
       buttonClass: 'bg-none border text-black hover:bg-sky-600 hover:text-white',
       highlighted: true,
-      tag: 'Smart Choice',
+      tag: t('SmartChoice'),
     },
     {
       name: 'Pro',
-      desc: 'For large teams needing full control',
-      buttonText: 'Contact Us',
+      displayname: t('Plans.Pro'),
+      desc: t('ProTagline'),
+      buttonText: t('ContactUs'),
       buttonlink: '#contact',
       buttonClass: 'bg-none border text-black hover:bg-sky-600 hover:text-white',
       highlighted: false,
-      tag: 'Full Access',
+      tag: t('FullAccess'),
     },
   ];
 
@@ -92,7 +98,9 @@ const PricingTable: React.FC = () => {
   };
 
   const FeatureIcon: React.FC<FeatureIconProps> = ({ available }) => (
-    <span className={`font-medium ${available ? 'text-green-500' : 'text-red-500'}`}>{available ? '✓' : '✗'}</span>
+    <span className={`font-medium ${available ? 'text-green-500' : 'text-red-500'}`}>
+      {available ? '✓' : '✗'}
+    </span>
   );
 
   const getFeatureKey = (planName: string) => {
@@ -103,22 +111,22 @@ const PricingTable: React.FC = () => {
 
   const renderFeatureList = (features: Feature[], key: string, planName: string) =>
     features
-  .filter(feature => feature[key as keyof Feature] !== undefined)
-  .map((feature, i) => {
-      const isAvailable = feature[key as keyof Feature] as boolean;
-      const note = feature[`${key}Note` as keyof Feature] as string | undefined;
-      return (
-        <div key={`${planName}-${i}`} className="flex items-start">
-          <div className="mt-0.5 mr-3">
-            <FeatureIcon available={isAvailable} />
+      .filter(feature => feature[key as keyof Feature] !== undefined)
+      .map((feature, i) => {
+        const isAvailable = feature[key as keyof Feature] as boolean;
+        const note = feature[`${key}Note` as keyof Feature] as string | undefined;
+        return (
+          <div key={`${planName}-${i}`} className="flex items-start">
+            <div className="mt-0.5 mr-3">
+              <FeatureIcon available={isAvailable} />
+            </div>
+            <span className={isAvailable ? 'text-gray-800' : 'text-gray-500'}>
+              {t(`Features.${feature.name}`)}
+              {note && <span className="text-sky-600 lg:font-bold ml-1">- {note}</span>}
+            </span>
           </div>
-          <span className={isAvailable ? 'text-gray-800' : 'text-gray-500'}>
-            {feature.name}
-            {note && <span className="text-sky-600  lg:font-bold ml-1">- {note}</span>}
-          </span>
-        </div>
-      );
-    });
+        );
+      });
 
   const calculatePrice = (plan: string, value: number): number => {
     const baseValues = {
@@ -167,11 +175,9 @@ const PricingTable: React.FC = () => {
     <div className="w-full max-w-7xl mx-auto px-8 sm:px-6 md:px-4 py-16" id="pricing">
       <div className="text-center mb-10">
         <div className="flex gap-2 justify-center">
-          <h1 className="text-2xl md:text-4xl font-bold text-gray-900">
-            Subscription Options
-          </h1>
+          <h1 className="text-2xl md:text-4xl font-bold text-gray-900">{t('Title')}</h1>
         </div>
-        <p className="text-lg md:text-3xl text-gray-600 md:mt-3">Power your growth with the right plan</p>
+        <p className="text-lg md:text-3xl text-gray-600 md:mt-3">{t('Subtitle')}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-2">
@@ -188,15 +194,15 @@ const PricingTable: React.FC = () => {
               </div>
             )}
             <div className="p-5 lg:p-8">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">{plan.name}</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">{plan.displayname}</h2>
               <p className="text-gray-600 mb-4">{plan.desc}</p>
-  <div className="text-xl font-semibold mt-2 text-gray-800">
-                  ₹{calculatePrice(plan.name, sliderValues[plan.name])}{' '}
-                  <span className="text-sm text-gray-500">/Yearly</span>
-                </div>
-              {/* Slider */}
+
+              <div className="text-xl font-semibold mt-2 text-gray-800">
+                ₹{calculatePrice(plan.name, sliderValues[plan.name])}{' '}
+                <span className="text-sm text-gray-500">{t('PerYearly')}</span>
+              </div>
+
               <div className="mb-4">
-            
                 <input
                   type="range"
                   min={100}
@@ -208,10 +214,9 @@ const PricingTable: React.FC = () => {
                   }
                   className="w-full accent-sky-600"
                 />
-                  <label className="text-sm text-gray-600 block mb-1">
-                  Instrument Range: {sliderValues[plan.name]}
+                <label className="text-sm text-gray-600 block mb-1">
+                  {t('InstrumentRange')}: {sliderValues[plan.name]}
                 </label>
-              
               </div>
 
               <a
@@ -225,11 +230,11 @@ const PricingTable: React.FC = () => {
                 className="w-full md:hidden bg-sky-600 text-white py-2 rounded-sm font-semibold flex items-center justify-center mt-8 mb-4"
                 onClick={() => togglePlanFeatures(plan.name)}
               >
-                Features List <LuSquareArrowOutUpRight className="ml-3 text-lg" />
+                {t('FeaturesList')} <LuSquareArrowOutUpRight className="ml-3 text-lg" />
               </button>
 
               <div className={`transition-all duration-300 ${expandedPlans[plan.name] ? 'block' : 'hidden'} md:block`}>
-                <h3 className="font-medium text-gray-900 mb-4 md:mt-4">Key features :</h3>
+                <h3 className="font-medium text-gray-900 mb-4 md:mt-4">{t('KeyFeatures')}</h3>
                 <div className="space-y-3">
                   {renderFeatureList(features, getFeatureKey(plan.name), plan.name)}
                   <a
