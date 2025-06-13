@@ -11,6 +11,7 @@ import 'react-phone-number-input/style.css';
 import icon from "../assets/CF.jpg";
 import { trackConversion } from "@/lib/google";
 import { useTranslations } from "next-intl";
+import { CountryCode } from 'libphonenumber-js';
 
 const service_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
 const template_ID = process.env.NEXT_PUBLIC_EMAILJS_ENQ_TEMPLATE_ID!;
@@ -19,7 +20,8 @@ const adminPhones = process.env.NEXT_PUBLIC_ADMIN_PHONES?.split(',').map((p) => 
 
 const Form: React.FC = () => {
  
-  const t = useTranslations('Contact')
+  const t = useTranslations('Contact');
+  const countryCode = t('code') as CountryCode || 'IN';
 
   const form = useRef<HTMLFormElement | null>(null);
   const [email, setEmail] = useState('');
@@ -180,7 +182,7 @@ const Form: React.FC = () => {
                 <label className="lg:text-lg font-medium">{t('Form.Phone')} :</label>
                 <PhoneInput
                   international
-                  defaultCountry="IN"
+                  defaultCountry={countryCode}
                   value={phone}
                   onChange={setPhone}
                   className=" !shadow-none rounded !bg-transparent border mt-1 p-2 [&>input]:border-none [&>input]:outline-none [&>input]:bg-transparent"
@@ -255,8 +257,7 @@ const Form: React.FC = () => {
               <div>
                 <h4 className="font-semibold text-lg">{t('ContactInfo.VisitUs')}</h4>
                 <p className="mt-1 text-sm">
-                  #306, 2nd Floor NSIC - Software Technology Business Park, 
-                  B 24, Guindy Industrial Estate, Ekkatuthangal, Chennai - 600032
+              {t('ContactInfo.Address')}
                 </p>
               </div>
             </div>

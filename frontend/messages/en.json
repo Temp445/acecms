@@ -44,7 +44,8 @@
       "feedbackLabel": "Positive feedback"
     },
     "contactBtn": "Contact Us",
-     "watchDemo": "Watch Demo"
+     "watchDemo": "Watch Demo",
+     "BookADemo": "Book A Free Demo Now!"
   },
 
   
@@ -174,6 +175,7 @@
  "Contact": {
   "Title": "Get in touch and ",
   "highlight" : "schedule your demo now!",
+  "code": "IN",
   "Form": {
     "Name": "Name",
     "Company": "Company Name",
@@ -187,12 +189,14 @@
     "EmailError": "Please enter a valid email address.",
     "PhoneError": "Please enter a valid phone number."
   },
+
   "ContactInfo": {
     "Title": "Contact Information",
     "EmailUs": "Email Us",
     "CallUs": "Call Us",
     "Hours": "Mon-Sat from 10am to 6:30pm",
-    "VisitUs": "Visit Us"
+    "VisitUs": "Visit Us",
+    "Address": "#306, 2nd Floor NSIC - Software Technology Business Park, B 24, Guindy Industrial Estate, Ekkatuthangal, Chennai - 600032"
   },
   "Messages": {
     "Success": "Your message has been sent successfully!",

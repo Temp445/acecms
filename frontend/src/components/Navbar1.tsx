@@ -1,5 +1,5 @@
 "use client";
-import { FC } from "react";
+import { FC, useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import logo from "../assets/AceLogo.png";
 
@@ -11,8 +11,10 @@ import { useTranslations } from "next-intl";
 const Navbar1: FC = () => {
   const t = useTranslations('Menu');
  
-  const pathname = usePathname();
+    const pathname = usePathname();
   const currentLocale = useLocale();
+  const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
 const languages = [
   { code: 'en', label: 'English', flag: 'us' },
@@ -25,6 +27,22 @@ const languages = [
 ];
 
 
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
+   useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
  
 
   return (
@@ -48,7 +66,7 @@ const languages = [
         <div className="hidden md:flex items-center space-x-4 ml-10">
        <div className="group">
            <Link
-            href="https://crm.acesoftcloud.in/"
+            href="#"
             className="flex items-center text-[#2b2d42]  border border-white  text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out   hover:scale-105"
           >
             {t('Project')}
@@ -72,7 +90,7 @@ const languages = [
 
         <div className="group">
            <Link
-            href="https://crm.acesoftcloud.in/"
+            href="#"
             className="flex items-center text-[#2b2d42]  border border-white  text-base font-semibold relative px-4 py-2 rounded-full transition-all duration-300 ease-in-out   hover:scale-105"
           >
             {t('PPAP')}
@@ -91,32 +109,36 @@ const languages = [
         </div>
       </div>
 
-   <div className="relative z-[100] group inline-block">
-
-  <div className="flex items-center gap-2 px-2 py-1.5 mr-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition cursor-pointer">
-    <Globe className="w-5 h-5" />
-    {languages.find((l) => l.code === currentLocale)?.label}
-    <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-  </div>
-
-  <ul className="absolute right-0 mt-1 w-60 bg-white border rounded shadow-lg z-50 grid grid-cols-2 gap-1 p-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-    {languages
-      .filter((lang) => lang.code !== currentLocale)
-      .map((lang) => (
-        <li key={lang.code}>
-          <Link
-            href={pathname}
-            locale={lang.code}
-            className="flex items-center gap-2 px-2 py-1 text-sm text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition rounded"
+         <div className="relative z-[100]" ref={dropdownRef}>
+          <button
+            onClick={toggleDropdown}
+            className="flex items-center gap-2 px-2 py-1.5 mr-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
           >
-            <span className={`fi fi-${lang.flag} w-7 h-5 block shadow-sm`} />
-            <span>{lang.label}</span>
-          </Link>
-        </li>
-      ))}
-  </ul>
-</div>
+            <Globe className="w-5 h-5" />
+            {languages.find((l) => l.code === currentLocale)?.label}
+            <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+          </button>
 
+          {isOpen && (
+            <ul className="absolute right-2 mt-2 w-60 bg-white border rounded shadow-lg z-50 grid grid-cols-2 gap-1 p-2">
+              {languages
+                .filter((lang) => lang.code !== currentLocale)
+                .map((lang) => (
+                  <li key={lang.code}>
+                    <Link
+                      href={pathname}
+                      locale={lang.code}
+                      className="flex items-center gap-2 px-2 py-1 text-sm text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition rounded"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span className={`fi fi-${lang.flag} w-7 h-5 block shadow-sm`} />
+                      <span>{lang.label}</span>
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          )}
+        </div>
 
       </nav>
 

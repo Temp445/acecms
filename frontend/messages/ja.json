@@ -1,7 +1,7 @@
 {
 
   "Menu": {
-  "Project": "プロジェクト",
+  "Project": "Project",
   "ProjectTooltip": "プロジェクトを簡素化し、チームを強化します。",
   "CRM": "CRM",
   "CRMTooltip": "顧客を理解し、ビジネスを成長させましょう。",
@@ -46,7 +46,9 @@
       "feedbackLabel": "肯定的なフィードバック"
     },
     "contactBtn": "お問い合わせ",
-    "watchDemo": "デモを見る"
+    "watchDemo": "デモを見る",
+    "BookADemo": "今すぐ無料デモを予約！"
+
   },
 
     "WhyChoose": {
@@ -173,6 +175,7 @@
  "Contact": {
   "Title": "今すぐご連絡いただき、",
   "highlight": "デモを予約しましょう！",
+  "code": "JP",
   "Form": {
     "Name": "名前",
     "Company": "会社名",
@@ -191,7 +194,8 @@
     "EmailUs": "メールでお問い合わせ",
     "CallUs": "お電話ください",
     "Hours": "月〜土 10:00〜18:30",
-    "VisitUs": "ご来社はこちら"
+    "VisitUs": "ご来社はこちら",
+    "Address": "#306、2階、NSICソフトウェア技術ビジネスパーク、B 24、グインディ工業地帯、エッカトゥタンガル、チェンナイ - 600032"
   },
   "Messages": {
     "Success": "メッセージが正常に送信されました！",

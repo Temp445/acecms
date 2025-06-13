@@ -1,7 +1,7 @@
 
 {
   "Menu": {
-  "Project": "Projet",
+  "Project": "Project",
   "ProjectTooltip": "Simplifiez les projets. Donnez du pouvoir aux équipes.",
   "CRM": "CRM",
   "CRMTooltip": "Connaissez vos clients. Développez votre entreprise.",
@@ -45,7 +45,9 @@
       "feedbackLabel": "Retours positifs"
     },
     "contactBtn": "Contactez-nous",
-    "watchDemo": "Regarder la démo"
+    "watchDemo": "Regarder la démo",
+    "BookADemo": "Réservez une démo gratuite dès maintenant !"
+
   },
 
   
@@ -175,6 +177,7 @@
    "Contact": {
   "Title": "Contactez-nous et",
   "highlight": "planifiez votre démo dès maintenant !",
+  "code": "FR",
   "Form": {
     "Name": "Nom",
     "Company": "Nom de l'entreprise",
@@ -193,7 +196,8 @@
     "EmailUs": "Envoyez-nous un email",
     "CallUs": "Appelez-nous",
     "Hours": "Lun-Sam de 10h à 18h30",
-    "VisitUs": "Visitez-nous"
+    "VisitUs": "Visitez-nous",
+    "Address": "#306, 2e étage, NSIC - Parc technologique des logiciels, B 24, Zone industrielle de Guindy, Ekkatuthangal, Chennai - 600032"
   },
   "Messages": {
     "Success": "Votre message a été envoyé avec succès !",

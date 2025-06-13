@@ -1,8 +1,8 @@
 {
 "Menu": {
-  "Project": "项目",
+  "Project": "Project",
   "ProjectTooltip": "简化项目，赋能团队。",
-  "CRM": "客户关系管理",
+  "CRM": "CRM",
   "CRMTooltip": "了解客户，发展业务。",
   "PPAP": "PPAP",
   "PPAPTooltip": "确保每一个零件的质量，每一次都准确无误。",
@@ -43,7 +43,9 @@
       "feedbackLabel": "好评率"
     },
     "contactBtn": "联系我们",
-    "watchDemo": "观看演示"
+    "watchDemo": "观看演示",
+    "BookADemo": "立即预约免费演示！"
+
   },
 
     "WhyChoose": {
@@ -168,6 +170,7 @@
  "Contact": {
   "Title": "请立即联系我们，",
   "highlight": "立即预约演示！",
+  "code": "CN",
   "Form": {
     "Name": "姓名",
     "Company": "公司名称",
@@ -186,7 +189,8 @@
     "EmailUs": "发送邮件给我们",
     "CallUs": "给我们打电话",
     "Hours": "周一至周六 10:00 — 18:30",
-    "VisitUs": "欢迎访问"
+    "VisitUs": "欢迎访问",
+    "Address": "#306，二楼，NSIC软件技术商务园，B 24，关迪工业区，埃卡图唐加尔，金奈 - 600032"
   },
   "Messages": {
     "Success": "您的消息已成功发送！",

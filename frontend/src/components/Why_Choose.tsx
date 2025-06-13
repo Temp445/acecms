@@ -20,6 +20,13 @@ const Why_Choose = () => {
     ja: 'md:w-40',
   }[locale] || 'md:w-40';
 
+  const breakpoint = {
+    en: 'xl:block',
+    zh: 'xl:block',
+  }[locale] || 'hidden';
+
+  
+
   return (
     <section className="pt-16 container mx-auto ">
       <div className=" mx-auto px-2 md:px-4">
@@ -57,7 +64,7 @@ const Why_Choose = () => {
             </div>
             
             <h2 className="text-xl md:3xl  2xl:text-4xl font-bold text-gray-800 leading-tight">
-               {t('heading.part1')} <span className='text-sky-800 mr-2'>{t('heading.part2')}</span> <br className='hidden xl:block' />{t('heading.part3')}
+               {t('heading.part1')} <span className='text-sky-800 mr-2'>{t('heading.part2')}</span> <br className={`hidden ${breakpoint}`} />{t('heading.part3')}
               <span className="text-blue-600"></span>
             </h2>
             
