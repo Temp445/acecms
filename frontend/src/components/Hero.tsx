@@ -40,7 +40,7 @@ const Hero = () => {
             <Navbar />
           </nav>
 
-          <div className="md:hidden flex gap-1 mx-auto justify-center w-fit py-4 px-6 md:mt-10 -mt-16">
+          <div className="md:hidden flex gap-1 mx-auto justify-center w-fit py-4 px-6 md:mt-10 -mt-20">
             <Image src={logo} alt="logo" className="w-8 h-8" width={32} height={32} />
             <span className="text-lg font-bold text-white tracking-wide mt-1">ACE CMS</span>
           </div>

@@ -7,7 +7,7 @@
     "CRMTooltip": "Know Your Customer. Grow Your Business.",
     "PPAP": "PPAP",
     "PPAPTooltip": "Ensuring Quality, Every Part, Every Time.",
-    "AllProducts": "All Product"
+    "AllProducts": "All Products"
   },
 
 "Navbar": {
@@ -19,7 +19,8 @@
     "BookDemo": "Book A Demo",
     "Clients": "Clients",
     "Contact": "Contact Us",
-    "SignIn": "Sign In"
+    "SignIn": "Sign In",
+    "AllProducts": "All Products"
   }},
 
 

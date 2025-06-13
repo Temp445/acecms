@@ -1,6 +1,6 @@
 "use client";
 import { FC, useState } from "react";
-import Link from "next/link";
+import {Link} from '@/i18n/navigation';
 import {
   House,
   Star,
@@ -10,6 +10,7 @@ import {
   X,
   Calendar,
   Users,
+  LayoutList 
 } from "lucide-react";
 import Image from "next/image";
 import logo from "../assets/AceLogo.png";
@@ -131,6 +132,14 @@ const Navbar: FC = () => {
               >
                 <Users className="w-4 h-4 mr-2" />
                 {t('Links.Clients')}
+              </Link>
+               <Link
+                href="#client"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center text-gray-800 hover:text-orange-600 text-base font-semibold"
+              >
+                <LayoutList  className="w-4 h-4 mr-2" />
+                {t('Links.AllProducts')}
               </Link>
             </div>
           </div>

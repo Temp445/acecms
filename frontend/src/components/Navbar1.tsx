@@ -1,5 +1,5 @@
 "use client";
-import { FC, useState } from "react";
+import { FC } from "react";
 import Image from "next/image";
 import logo from "../assets/AceLogo.png";
 
@@ -11,9 +11,8 @@ import { useTranslations } from "next-intl";
 const Navbar1: FC = () => {
   const t = useTranslations('Menu');
  
-    const pathname = usePathname();
+  const pathname = usePathname();
   const currentLocale = useLocale();
-  const [isOpen, setIsOpen] = useState(false);
 
 const languages = [
   { code: 'en', label: 'English', flag: 'us' },
@@ -26,7 +25,6 @@ const languages = [
 ];
 
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
  
 
   return (
@@ -40,9 +38,9 @@ const languages = [
               alt="logo"
               width={100}
               height={100}
-              className="w-12 h-12 md:w-10 md:h-10  "
+              className="w-10 h-10 md:w-10 md:h-10  "
             />
-            <span className="mt-2 text-xl">ACE Software Solutions Pvt. Ltd</span>
+            <span className="mt-2 text-sm lg:text-xl">ACE Software <br className="lg:hidden"/> Solutions Pvt. Ltd</span>
           </Link>
         </div>
 
@@ -93,17 +91,15 @@ const languages = [
         </div>
       </div>
 
-          <div className="relative z-[100]">
-        <button
-          onClick={toggleDropdown}
-          className="flex items-center gap-2 px-2 py-1.5 mr-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-        >
-          <Globe className="w-5 h-5" />
-          {languages.find((l) => l.code === currentLocale)?.label}
-          <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-        </button>
-{isOpen && (
-  <ul className="absolute right-2 mt-2 w-60 bg-white border rounded shadow-lg z-50 grid grid-cols-2 gap-1 p-2">
+   <div className="relative z-[100] group inline-block">
+
+  <div className="flex items-center gap-2 px-2 py-1.5 mr-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition cursor-pointer">
+    <Globe className="w-5 h-5" />
+    {languages.find((l) => l.code === currentLocale)?.label}
+    <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+  </div>
+
+  <ul className="absolute right-0 mt-1 w-60 bg-white border rounded shadow-lg z-50 grid grid-cols-2 gap-1 p-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-opacity duration-200">
     {languages
       .filter((lang) => lang.code !== currentLocale)
       .map((lang) => (
@@ -112,7 +108,6 @@ const languages = [
             href={pathname}
             locale={lang.code}
             className="flex items-center gap-2 px-2 py-1 text-sm text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition rounded"
-            onClick={() => setIsOpen(false)}
           >
             <span className={`fi fi-${lang.flag} w-7 h-5 block shadow-sm`} />
             <span>{lang.label}</span>
@@ -120,9 +115,8 @@ const languages = [
         </li>
       ))}
   </ul>
-)}
+</div>
 
-      </div>
 
       </nav>
 
