@@ -38,7 +38,7 @@ export default function DemoButton() {
         {showVideoOverlay && (
           <div
             id="videoOverlay"
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-[300]"
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-[600]"
             onClick={handleOverlayClick}
           >
             <div className="relative w-full max-w-5xl mx-4 aspect-video">

@@ -16,8 +16,10 @@ const Why_Choose = () => {
   const width = {
     en: 'md:w-36',
     zh: 'md:w-32',
+    hi: 'md:w-32',
     it: 'md:w-36',
     ja: 'md:w-40',
+    ru: 'md:w-44',
   }[locale] || 'md:w-40';
 
   const breakpoint = {

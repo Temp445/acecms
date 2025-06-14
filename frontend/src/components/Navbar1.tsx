@@ -18,12 +18,18 @@ const Navbar1: FC = () => {
 
 const languages = [
   { code: 'en', label: 'English', flag: 'us' },
+  { code: 'hi', label: 'हिन्दी', flag: 'in' },
   { code: 'de', label: 'Deutsch', flag: 'de' },
   { code: 'fr', label: 'Français', flag: 'fr' },
   { code: 'es', label: 'Español', flag: 'es' },
   { code: 'it', label: 'Italiano', flag: 'it' },
   { code: 'ja', label: '日本語', flag: 'jp' },
   { code: 'zh', label: '中文', flag: 'cn' },
+  { code: 'br', label: 'Português (Brasil)', flag: 'br' },
+  { code: 'kr', label: '한국어', flag: 'kr' },
+  { code: 'be', label: 'বাংলা', flag: 'bd' },
+  { code: 'ru', label: 'русский', flag: 'ru' },
+
 ];
 
 
@@ -120,7 +126,7 @@ const languages = [
           </button>
 
           {isOpen && (
-            <ul className="absolute right-2 mt-2 w-60 bg-white border rounded shadow-lg z-50 grid grid-cols-2 gap-1 p-2">
+            <ul className="absolute right-2 mt-2 w-80 bg-white border rounded shadow-lg z-50 grid grid-cols-2 gap-1 p-2">
               {languages
                 .filter((lang) => lang.code !== currentLocale)
                 .map((lang) => (

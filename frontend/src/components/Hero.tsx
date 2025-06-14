@@ -10,9 +10,18 @@ import img3 from '../assets/4750.jpg';
 import image5 from '../assets/Group6.png';
 import DemoButton from './DemoButton';
 import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+
 
 const Hero = () => {
   const t = useTranslations('Hero');
+    const locale = useLocale();
+
+  const size = {
+    en: 'lg:text-4xl xl:text-[42px] 2xl:text-5xl',
+    de: "lg:text-2xl xl:text-5xl 2xl:text-[42px]",
+    ru: ' lg:text-2xl xl:text-3xl 2xl:text-4xl',
+  }[locale] || 'lg:text-4xl xl:text-5xl 2xl:text-5xl';
 
   return (
     <div className="relative min-h-fit overflow-hidden bg-blue-600" id="top">
@@ -88,10 +97,10 @@ const Hero = () => {
             <div className="w-full text-center lg:text-left order-2 lg:order-1 mt-10 md:mt-0 lg:mt-10">
               <div className="max-w-2xl mx-auto lg:mx-0 space-y-6 md:space-y-8">
                 <div className="space-y-4">
-                  <h1 className="text-xl text-white font-bold md:text-center md:text-4xl lg:hidden">
+                  <h1 className="text-xl text-white font-bold md:text-center md:text-3xl lg:hidden">
                     {t('mobileTitle')}
                   </h1>
-                  <h1 className="hidden lg:block text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-black text-white leading-tight">
+                  <h1 className={`hidden lg:block text-4xl md:text-5xl ${size} font-black text-white leading-tight`}>
                     {t('desktopTitle.before')}{" "}
                     <span className="relative text-white">
                       {t('desktopTitle.highlight')}
