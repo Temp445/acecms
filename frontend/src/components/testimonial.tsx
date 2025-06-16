@@ -21,21 +21,21 @@ export default function TestimonialCarousel() {
   {
     id: 1,
     logo:icon1,
-    name: 'Praveena',
+    name: t('name1'),
     company: 'Asahi India Glass Ltd',
     quote: t('Quote1')
   },
   {
     id: 2,
     logo:icon2,
-    name: 'Arun',
+    name: t('name2'),
     company: 'Wonjin Autoparts India Pvt Ltd',
     quote: t('Quote2')
   },
   {
     id: 3,
     logo:icon3,
-    name: 'Vijaya Prakash',
+    name: t('name3'),
     company: 'RANE TRW STEERING SYSTEMS Pvt Ltd',
     quote: t('Quote3')
   }
